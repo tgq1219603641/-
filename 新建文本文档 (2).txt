@@ -1,0 +1,89 @@
+  首先是添加单词，下面是代码：//先记录单词，在运用指针指向他
+
+void addWord(char *w1)        //添加单词
+{
+
+    link *p1,*p2;
+    //if(w1[0] <= 'Z' && w1[0] >= 'A')    //转成小写字母
+    //{
+    //    w1[0]+=32;
+    //}
+    for(p1=head;p1!=NULL;p1=p1->next)    //判断单词在连表中是否存在
+    {
+        if(!strcmp(p1->w,w1))
+        {
+            p1->count++;   //存在就个数加1
+            return;
+        }
+    }
+
+    p1=(struct word *)malloc(sizeof(word));//不存在添加新单词
+    strcpy(p1->w,w1);
+    p1->count=1;
+    p1->next=NULL;
+    count++;    //总的单词数加加
+
+    if(head==NULL)
+    {
+        head=p1;
+    }
+    else
+    {
+        for(p2=head;p2->next!=NULL;p2=p2->next);
+        p2->next=p1;
+    }
+}
+
+   然后判断指向的是是不是字符或是其他
+int isnotWord(char a)        //判断是否为字母
+{
+    if(a <= 'z' && a >= 'a')
+    {
+        littleletter++;
+        return 0;
+    }
+    else if(a <= 'Z' && a >= 'A')
+    {
+        bigletter++;
+        return 0;
+    }
+    else if(a==' ')
+    {
+        space++;
+        return 1;
+    }
+    else if(a>='1'&&a<='9')
+    {
+        number++;
+        return 1;
+    }
+    else if(a=='\n')
+    {
+        hang_num++;
+        return 1;
+    }
+    else
+    {
+        other++;
+        return 1;
+    }
+
+}
+    统计单词个数：
+#include <iostream>
+#include<cstdio>
+#include<cstdlib>
+using namespace std;
+//统计单词的个数
+int main()
+{
+    char a;
+    int count=0;
+    while((a=getchar())!='\n')
+    {
+        if(a==' ')
+             count++;
+    }
+    cout << count+1 << endl;
+    return 0;
+}
