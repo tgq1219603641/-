@@ -1,0 +1,56 @@
+             用户属性
+属性名称      数据类型      属性描述
+employeeNo    char(10)      编号
+empName       varchar（20） 姓名
+sex           char（2）     性别
+telephone     varchar（15） 电话
+age           varchar（10） 年龄 
+
+
+
+             管理者属性
+属性名称      数据类型      属性描述
+employeeNo    char(10)      编号
+empName       varchar（20） 姓名
+sex           char（2）     性别
+telephone     varchar（15） 电话
+title         varchar（20） 职位
+
+
+
+             交易记录属性
+属性名称               数据类型           属性描述
+total transaction      varchar（20）      交易总数
+succed transaction     varchar（20）      成功交易数
+faild transaction      char（2）          失败交易数
+user feedback          varchar（15）      用户反馈
+user suggestion        varchar（10）      用户建议
+
+
+
+创建一个名称为男女朋友租借系统的数据库
+CREATE DATABASE 男女朋友租借系统;
+
+使用USE命令指定使用男女朋友租借系统数据库
+USE 男女朋友租借系统;
+
+显示数据库
+show 男女朋友租借系统;
+
+显示数据库中的表
+show tables;
+
+对表进行操作
+describe user;
+
+插入
+insert into user values("user","123456");   
+删除
+delete from user where username="user";  
+修改
+update user set username="adm" where username="user";
+查询数据
+select * from user;
+
+
+

@@ -1,0 +1,42 @@
+建立数据库：
+CREATE DATABASE 男女朋友租借系统;
+
+建立三个数据表：
+建立“管理者”数据表：
+CREATE TABLE 管理者 (编号varchar（20），姓名char(5),性别char（5），职位char（5），联系方式char（5），相片char(20),备注char(10));
+向表中输入一条数据：
+INSERT INTO 管理者 (编号,姓名 ,性别，职位，联系方式，相片，备注 ) VALUES (011, ‘小红’, ‘女’，‘介绍人员’，‘1111’，‘x’，NULL);
+
+建立“用户”数据表：
+CREATE TABLE 用户 (编号varchar（20），姓名char(5),性别char（5），相片char（20），年龄char（5），是否婚配varchar(2),地址char(20)，租借要求char（20），联系方式char（5）);
+向表中输入一条数据：
+INSERT INTO 用户 （编号，姓名，性别，相片，年龄，是否婚配，地址，租借要求，联系方式）VALUES（001，‘花花’，‘女’，‘x’，‘21’，‘否’，‘xx省xx市’，‘长得帅’，‘0011’）；
+
+
+建立“用户租借记录”数据表：
+CREATE TABLE 用户租借记录 （租借总数varchar（20），租借成功数char（5），租借失败数char（5），用户反馈char（5），用户建议char（5），改进方式char（10），改进后用户满意度varchar（20），备注char（20））；
+向表中输入一条数据：
+INSERT INTO 用户租借记录 （租借总数，租借成功数，租借失败数，用户反馈，用户建议，改进方式，改进后用户满意度，备注）VALUES（150，‘88’，‘62’，‘120’，‘55’，‘希望能按年龄详细分类’，‘98%’，NULL）；
+
+
+
+使用USE命令指定使用男女朋友租借系统数据库
+USE 男女朋友租借系统;
+
+显示数据库
+show 男女朋友租借系统;
+
+显示数据库中的表
+show tables;
+
+对表进行操作
+describe user;
+
+插入
+insert into user values("user","123456");   
+删除
+delete from user where username="user";  
+修改
+update user set username="adm" where username="user";
+查询数据
+select * from user;

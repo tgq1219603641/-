@@ -1,0 +1,146 @@
+/*
+Navicat MySQL Data Transfer
+
+
+Source Server         : localhost_3306
+
+Source Server Version : 50717
+
+Source Host           : localhost:3306
+
+Source Database       : 男女朋友租借系统
+
+
+Target Server Type    : MYSQL
+
+Target Server Version : 50717
+
+File Encoding         : 65001
+
+
+Date: 2017-11-16 15:21:32
+
+*/
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- 
+Table structure for `用户`
+
+-- ----------------------------
+
+DROP TABLE IF EXISTS `用户`;
+
+CREATE TABLE `用户` (
+ 
+ `编号` varchar(20) NOT NULL,
+ 
+ `姓名` char(5) DEFAULT NULL,
+ 
+ `性别` char(5) DEFAULT NULL,
+ 
+ `相片` char(20) DEFAULT NULL,
+ 
+ `年龄` char(5) DEFAULT NULL,
+ 
+ `是否婚配` varchar(2) DEFAULT NULL,
+  
+`地址` char(20) DEFAULT NULL,
+  
+`租借要求` char(20) DEFAULT NULL,
+  
+`联系方式` char(5) DEFAULT NULL,
+ 
+ PRIMARY KEY (`编号`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- ----------------------------
+--
+ Records of 用户
+
+-- ----------------------------
+
+INSERT INTO `用户` VALUES ('001', '花花', '女', 'x', '21', '否', 'xx省xx市', '长得帅', '0011');
+
+INSERT INTO `用户` VALUES ('002', '王五', '男', 'x', '22', '是', 'xx省xx市', '有钱', '0022');
+
+INSERT INTO `用户` VALUES ('003', '李四', '男', 'x', '24', '否', 'xx省xx市', '有学历', '0033');
+
+
+-- ----------------------------
+--
+ Table structure for `用户租借记录`
+
+-- ----------------------------
+DROP TABLE IF EXISTS `用户租借记录`;
+
+CREATE TABLE `用户租借记录` (
+  
+`租借总数` varchar(20) NOT NULL,
+  
+`租借成功数` char(5) DEFAULT NULL,
+  
+`租借失败数` char(5) DEFAULT NULL,
+  
+`用户反馈` char(5) DEFAULT NULL,
+  
+`用户建议` char(5) DEFAULT NULL,
+  
+`改进方式` char(10) DEFAULT NULL,
+  
+`改进后用户满意度` varchar(20) DEFAULT NULL,
+ 
+ `备注` char(20) DEFAULT NULL,
+ 
+ PRIMARY KEY (`租借总数`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- 
+Records of 用户租借记录
+
+-- ----------------------------
+
+INSERT INTO `用户租借记录` VALUES ('150', '88', '62', '120', '55', '希望能按年龄详细分类', '98%', null);
+
+INSERT INTO `用户租借记录` VALUES ('165', '120', '45', '88', '65', '希望能把美女归类', '99%', null);
+
+INSERT INTO `用户租借记录` VALUES ('200', '120', '82', '57', '55', '希望有更详细的地址', '100%', null);
+-- ----------------------------
+-- 
+Table structure for `管理者`
+
+-- ----------------------------
+
+DROP TABLE IF EXISTS `管理者`;
+
+CREATE TABLE `管理者` (
+  
+`编号` varchar(20) NOT NULL,
+ 
+ `姓名` char(5) DEFAULT NULL,
+ 
+ `性别` char(5) DEFAULT NULL,
+ 
+ `职位` char(5) DEFAULT NULL,
+  
+`联系方式` char(5) DEFAULT NULL,
+ 
+ ` 相片` char(20) DEFAULT NULL,
+ 
+ `备注` char(10) DEFAULT NULL,
+  
+PRIMARY KEY (`编号`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- ----------------------------
+-- 
+Records of 管理者
+
+-- ----------------------------
+
+INSERT INTO `管理者` VALUES ('011', '小红', '女', '介绍人员', '1111', 'x', null);
+
+INSERT INTO `管理者` VALUES ('012', '小米', '男', '交易收银', '1112', 'x', null);
+
+INSERT INTO `管理者` VALUES ('013', '小明', '男', '主管', '1113', 'x', null);
